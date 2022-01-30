@@ -1,12 +1,12 @@
-import { View, Text } from 'react-native';
+import { View, Text, SafeAreaView } from 'react-native';
 import React from 'react';
 
-const index = () => {
+const HomePage = () => {
   return (
-    <View>
+    <SafeAreaView>
       <Text>HOME PAGE</Text>
-    </View>
+    </SafeAreaView>
   );
 };
 
-export default index;
+export default HomePage;

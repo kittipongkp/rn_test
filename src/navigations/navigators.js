@@ -1,20 +1,22 @@
 import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import { GetSarabunFont } from '../config/font';
+import {GetSarabunFont} from '../config/font';
 import LoginPage from '../pages/LoginPage';
 import HomePage from '../pages/HomePage';
+import {colors} from '../config/colors';
 
 export const AppScreens = {
-  Login : 'Login',
-  HomePage : 'HomePage',
-}
+  Login: 'Login',
+  HomePage: 'HomePage',
+  Home: 'Home',
+  LoginPage: 'LoginPage',
+};
 
+const Stack = createNativeStackNavigator();
 
 const Root = () => {
-  const Stack = createStackNavigator();
-
   const Login = () => {
     return (
       <Stack.Navigator
@@ -29,10 +31,10 @@ const Root = () => {
           headerTitleStyle: GetSarabunFont('medium'),
           headerTitleAlign: 'left',
         }}
-        initialRouteName={AppScreens.Login}>
+        initialRouteName={AppScreens.LoginPage}>
         <Stack.Screen
-          options={{ headerShown: false }}
-          name={AppScreens.Login}
+          options={{headerShown: false}}
+          name={AppScreens.LoginPage}
           component={LoginPage}
         />
       </Stack.Navigator>
@@ -42,33 +44,37 @@ const Root = () => {
   const HomeNavigator = () => {
     return (
       <Stack.Navigator
-        screenOptions={({ navigation }) => ({
+        screenOptions={({navigation}) => ({
           headerStyle: {
             backgroundColor: colors.black,
           },
           headerTintColor: colors.white,
-          headerTitleStyle: { ...GetSarabunFont('regular'), fontSize: 20 },
-          headerLeftContainerStyle: { marginHorizontal: 10 },
-          headerLeft: () => backButton(navigation),
+          headerTitleStyle: {...GetSarabunFont('regular'), fontSize: 20},
+          headerLeftContainerStyle: {marginHorizontal: 10},
+          //headerLeft: () => backButton(navigation),
         })}>
         <Stack.Screen
           options={() => ({
             headerShown: false,
           })}
-          name={AppScreens.HomePage}
+          name={AppScreens.Home}
           component={HomePage}
         />
-        
       </Stack.Navigator>
     );
   };
-
-
 
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName={AppScreens.Login}>
       <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name={AppScreens.Login}
+          component={Login}
+        />
+        <Stack.Screen
           options={{
             headerShown: false,
           }}

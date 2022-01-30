@@ -4,6 +4,7 @@ import {
   Text, 
   View,
 } from 'react-native';
+import Navigation from './src/navigations/navigators';
 
 
 
@@ -11,9 +12,9 @@ import {
 const App = () => {
  
   return (
-    <SafeAreaView>
-      <Text>Hello world</Text>
-    </SafeAreaView>
+    <>
+      <Navigation />
+    </>
   );
 };
 
