@@ -51,16 +51,17 @@ export const styles = ScaledSheet.create({
     flexDirection: 'row',
     // backgroundColor: colors.red,
     //height: 100,
-
   },
   container_form2: {
     flex: 1,
-    backgroundColor: colors.primary,
+    // backgroundColor: colors.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
     // height: 300,
   },
   container_form3: {
     flex: 5,
-    backgroundColor: colors.second,
+    // backgroundColor: colors.second,
   },
   container_form4: {
     flex: 3,
@@ -86,21 +87,81 @@ export const styles = ScaledSheet.create({
     alignItems: 'center',
   },
   register_text: {
-      ...GetSarabunFont('medium'),
-      color: '#335eea',
+    ...GetSarabunFont('medium'),
+    color: '#335eea',
   },
   container_flag: {
-      flex: 1,
-        justifyContent: 'flex-end',
-        alignItems: 'center',
-        marginRight: 20,
-        flexDirection: 'row',
-        alignContent: 'center',
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+    marginRight: 20,
+    flexDirection: 'row',
+    alignContent: 'center',
   },
   flag: {
-      width: 40,
-      height: 40,
-    borderRadius: 20,
-    marginLeft: 10
-  }
+    width: 30,
+    height: 30,
+    borderRadius: 15,
+    marginLeft: 10,
+  },
+  text_lock: {
+    ...GetSarabunFont('bold'),
+    color: 'gray',
+    fontSize: 18,
+    alignSelf: 'center',
+  },
+  headerInputText: {
+    ...GetSarabunFont('light'),
+    fontSize: 18,
+    margin: 1,
+    marginLeft: 5,
+  },
+  inputContainer: {
+    backgroundColor: colors.input,
+    borderRadius: 5,
+    margin: 5,
+    width: '95%',
+    height: 50,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 3,
+  },
+  removeBorder: {
+    borderBottomWidth: 0,
+  },
+  inputText: {
+    color: colors.text,
+    ...GetSarabunFont('light'),
+    fontSize: 18,
+  },
+  button_login: {
+    width: "95%",
+    height: 42,
+    borderWidth: 1,
+    borderColor: '#335eea',
+    backgroundColor: '#335eea',
+    borderRadius: 10,
+    shadowColor: "#000",
+shadowOffset: {
+	width: 0,
+	height: 2,
+},
+shadowOpacity: 0.25,
+shadowRadius: 3.84,
+
+elevation: 5,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+    login_text: {
+        ...GetSarabunFont('medium'),
+        color: colors.white,
+        fontSize: 14
+    }
 });
